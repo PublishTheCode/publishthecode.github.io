@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    h1 {
+        font-family: 'Lucida Console', 'Courier New';
+      }
+    p {
+        font-family: 'Lucida Console', 'Courier New';
+      }
+    button {
+        font-family: 'Lucida Console', 'Courier New';
+      }
+
+    .glow-on-hover {
+        width: 220px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+
+    .glow-on-hover:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+        color: #000
+    }
+
+    .glow-on-hover:active:after {
+        background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+        opacity: 1;
+    }
+
+    .glow-on-hover:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #2b2b2b;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    @keyframes glowing {
+        0% { background-position: 0 0; }
+        50% { background-position: 400% 0; }
+        100% { background-position: 0 0; }
+    }
+    textarea {
+        background-color: #3CBC8D;
+        color: white;
+    }
+    /* Общий контейнер */
+.code-input-container {
+  width: 100%;
+  max-width: 600px; /* Максимальная ширина */
+  margin: 20px auto; /* Отступы сверху/снизу и центрирование */
+  border: 1px solid #ccc; /* Рамка */
+  border-radius: 5px; /* Скругление углов */
+  padding: 5px; /* Внутренний отступ */
+  background-color: #f9f9f9; /* Фон */
+}
+
+/* Поле ввода кода */
+.code-input {
+  width: 100%; /* Занимает всю ширину контейнера */
+  min-height: 100px; /* Минимальная высота */
+  padding: 10px; /* Внутренний отступ */
+  font-family: monospace; /* Моноширинный шрифт (для кода) */
+  font-size: 14px; /* Размер шрифта */
+  line-height: 1.5; /* Межстрочный интервал */
+  border: none; /* Убираем рамку textarea, так как она уже есть у контейнера*/
+  outline: none; /* Убираем обводку при фокусе */
+  resize: none; /* Разрешаем вертикальное изменение размера */
+  background-color: transparent; /* Прозрачный фон, чтобы был виден фон контейнера */
+  color: #333; /* Цвет текста */
+  box-sizing: border-box; /* Учитывать padding и border в ширине */
+}
+
+/* Стили при фокусе (не обязательно, но приятно) */
+.code-input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Легкая тень при фокусе */
+}
+
+/* Placeholder (текст-подсказка) */
+.code-input::placeholder {
+  color: #999; /* Цвет текста placeholder */
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #000000;">
+    <h1 style="color: rgb(255, 255, 255)">Here you can publish your code! </h1>
+    <textarea class="code-input" id="myCode" rows="5" placeholder="Введите ваш код здесь..."></textarea>
+</body>
+</html>
