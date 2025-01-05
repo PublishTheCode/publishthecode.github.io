@@ -88,16 +88,16 @@
 /* Поле ввода кода */
 .code-input {
   width: 100%; /* Занимает всю ширину контейнера */
-  min-height: 100px; /* Минимальная высота */
+  min-height: 500px; /* Минимальная высота */
   padding: 10px; /* Внутренний отступ */
   font-family: monospace; /* Моноширинный шрифт (для кода) */
   font-size: 14px; /* Размер шрифта */
   line-height: 1.5; /* Межстрочный интервал */
-  border: none; /* Убираем рамку textarea, так как она уже есть у контейнера*/
+  border: 1px solid #ccc; /* Убираем рамку textarea, так как она уже есть у контейнера*/
   outline: none; /* Убираем обводку при фокусе */
   resize: none; /* Разрешаем вертикальное изменение размера */
-  background-color: transparent; /* Прозрачный фон, чтобы был виден фон контейнера */
-  color: #333; /* Цвет текста */
+  background-color: #f9f9f927; /* Прозрачный фон, чтобы был виден фон контейнера */
+  color: #ffffffea; /* Цвет текста */
   box-sizing: border-box; /* Учитывать padding и border в ширине */
 }
 
@@ -108,7 +108,7 @@
 
 /* Placeholder (текст-подсказка) */
 .code-input::placeholder {
-  color: #999; /* Цвет текста placeholder */
+  color: #ffffffa8; /* Цвет текста placeholder */
 }
 </style>
 <head>
@@ -117,7 +117,10 @@
     <title>Document</title>
 </head>
 <body style="background-color: #000000;">
-    <h1 style="color: rgb(255, 255, 255)">Here you can publish your code! </h1>
-    <textarea class="code-input" id="myCode" rows="5" placeholder="Введите ваш код здесь..."></textarea>
+    <div class="container"><h1 style="color: rgb(255, 255, 255)">Here you can publish your code!</h1></div>
+    <textarea class="code-input" id="myCode" rows="50" placeholder="Type your code here..."></textarea>
+    <button class="glow-on-hover">Publish</button>
+    <button class="glow-on-hover" onclick="window.location.href='https://publishthecode.github.io'" >Don't publish</button>
+    
 </body>
 </html>
