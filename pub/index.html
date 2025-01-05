@@ -125,8 +125,15 @@
     <hr>
     <h3 style="color: rgb(255, 255, 255)">Write your code:</h3>
     <textarea class="code-input" id="myCode" rows="50" placeholder="Type your code here..."></textarea>
-    <button class="glow-on-hover">Publish</button>
+    <button class="glow-on-hover" onclick="onsend()">Publish</button>
     <button class="glow-on-hover" onclick="window.location.href='https://publishthecode.github.io'" >Don't publish</button>
     
 </body>
+<script type="text/javascript">
+  var code = document.getElementById('myCode').value; 
+  function onsend() {
+      code = document.getElementById('myCode').value
+      alert(code);
+  }
+</script>
 </html>
